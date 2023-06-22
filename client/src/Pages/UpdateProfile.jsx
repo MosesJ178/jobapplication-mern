@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import api from '../api/api';
-import { Login } from '../features/userSlice';
+import { Login, updateField } from '../features/userSlice';
 import { Updateprofile } from '../features/profileSlice';
 import PastAppliedJob from '../components/PastAppliedJob';
 
@@ -53,6 +53,9 @@ const UpdateProfile = () => {
 
   const handleUpdateProfile = async () => {
     const updatedProfile = { ...data, keySkills: skills };
+    if(user.recruiter!==data.recruiter){
+      dispatch(updateField({recruiter:data.recruiter}));
+    }
     const headers = {
       'Content-Type': 'application/json',
       accesstoken: user.accesstoken,

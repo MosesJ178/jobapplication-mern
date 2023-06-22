@@ -9,12 +9,15 @@ export const userSlice = createSlice({
         Login: (state, action) => {
             state.value = {...state.value,...action.payload};
         },
+        updateField: (state, action) => {
+            state.value = {...state.value,...action.payload};
+        },
         Logout: (state) => {
             state.value= { id:'',username:'',email:'',recruiter:false,appliedJob:[],accesstoken:'',refreshtoken:'' }
         }
     },
 })
 
-export const { Login, Logout } = userSlice.actions
+export const { Login, Logout, updateField } = userSlice.actions
 
 export default userSlice.reducer
