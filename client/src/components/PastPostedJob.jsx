@@ -20,7 +20,7 @@ const PastPostedJob = () => {
         refreshtoken: user.refreshtoken,
       };
       const data = { id: user.id };
-      const response = await axios.post('http://localhost:5000/job/fetchjobposted', data, { headers });
+      const response = await axios.post('https://jobapplication-app.onrender.com/job/fetchjobposted', data, { headers });
       // const response = await api.get('/job/fetchjobposted', data, { headers} );
       setListOfPostedData(response.data.listOfJobsPosted2);
       if (response.data.accesstoken) {

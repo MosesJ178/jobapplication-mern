@@ -17,7 +17,7 @@ const Dashboard = () => {
       const headers = {
         'Content-Type': 'application/json'
       };
-      const response = await axios.get('http://localhost:5000/job/fetchjobs', { headers });
+      const response = await axios.get('https://jobapplication-app.onrender.com/job/fetchjobs', { headers });
       setListOfJobs(response.data);
     };
     fetchJobs();
@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const getDesiredJobs = async () => {
     setLoading((prev) => !prev);
-    const response = await axios.post('http://localhost:5000/job/getdesiredjob', { query: query });
+    const response = await axios.post('https://jobapplication-app.onrender.com/job/getdesiredjob', { query: query });
     console.log(response.data);
     setListOfJobs(response.data);
     setLoading((prev) => !prev);

@@ -35,7 +35,7 @@ const JobDetails = () => {
         jobId: jobdetails._id,
         postedBy: jobdetails.postedBy
       }
-      const response = await axios.patch('http://localhost:5000/job/apply', data, { headers });
+      const response = await axios.patch('https://jobapplication-app.onrender.com/job/apply', data, { headers });
       if (response.data.accesstoken) {
         dispatch(Login({ accesstoken: response.data.accesstoken }));
       }
