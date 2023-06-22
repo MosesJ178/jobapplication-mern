@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://jobapplication-app.onrender.com',
+    origin: '*',
     credentials: true
 }));
 
