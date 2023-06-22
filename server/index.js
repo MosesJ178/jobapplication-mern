@@ -10,11 +10,11 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: '*',
+    origin: ['https://jobapplication-fullstack.vercel.app', 'https://6494afb3b9b2570997a168fe--inspiring-pavlova-48c111.netlify.app'],
     credentials: true
 }));
 app.use((req, res, next) => {
-    // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Credentials', 'true');
     next();
 });
