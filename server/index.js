@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: ['https://64952fd4efda0b3e4b922058--heartfelt-squirrel-04c1f1.netlify.app/','https://jobapplication-fullstack.vercel.app', 'https://6494afb3b9b2570997a168fe--inspiring-pavlova-48c111.netlify.app'],
+    origin: 'https://64952fd4efda0b3e4b922058--heartfelt-squirrel-04c1f1.netlify.app/',
     credentials: true
 }));
 app.use((req, res, next) => {
