@@ -167,9 +167,9 @@ const UpdateProfile = () => {
           >
             Update Profile
           </button>
+          <button className='bg-red-600 text-white py-2 rounded-md' onClick={applyLogout}>Logout</button>
         </div>
       </div>
-      <button className='bg-red-600 text-white' onClick={applyLogout}>Logout</button>
       <div className='flex justify-center items-center flex-col mt-3'>
         <button onClick={() => setAppliedJobs((prev) => !prev)} className='bg-green-400 px-3 py-1 rounded-lg'>View Applied Jobs </button>
         {appliedJobs && <PastAppliedJob/>}
