@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://64952fd4efda0b3e4b922058--heartfelt-squirrel-04c1f1.netlify.app',
+    origin: 'https://jobapplication-mern.netlify.app/',
     credentials: true
 }));
 
