@@ -14,7 +14,7 @@ app.use(cors({
     credentials: true
 }));
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://64952fd4efda0b3e4b922058--heartfelt-squirrel-04c1f1.netlify.app/');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Credentials', 'true');
