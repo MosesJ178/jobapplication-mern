@@ -4,6 +4,7 @@ import api from '../api/api';
 import { Login, updateField } from '../features/userSlice';
 import { Updateprofile } from '../features/profileSlice';
 import PastAppliedJob from '../components/PastAppliedJob';
+import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
   const user = useSelector((state) => state.user.value);
@@ -12,6 +13,7 @@ const UpdateProfile = () => {
   const [appliedJobs,setAppliedJobs] = useState(false);
   const [newSkill, setNewSkill] = useState('');
   const [data, setData] = useState(profile);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -79,6 +81,10 @@ const UpdateProfile = () => {
     }
   };
 
+  const applyLogout = () => {
+    localStorage.clear();
+    navigate("/",{ replace: true });
+  }
 
   return (
     <div>
@@ -163,6 +169,7 @@ const UpdateProfile = () => {
           </button>
         </div>
       </div>
+      <button className='bg-red-600 text-white' onClick={applyLogout}>Logout</button>
       <div className='flex justify-center items-center flex-col mt-3'>
         <button onClick={() => setAppliedJobs((prev) => !prev)} className='bg-green-400 px-3 py-1 rounded-lg'>View Applied Jobs </button>
         {appliedJobs && <PastAppliedJob/>}
