@@ -10,16 +10,9 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://64952fd4efda0b3e4b922058--heartfelt-squirrel-04c1f1.netlify.app/',
+    origin: '*',
     credentials: true
 }));
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
-});
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: false }));
